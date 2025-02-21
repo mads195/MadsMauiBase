@@ -8,7 +8,7 @@ To get started with the MadsMauiBase, clone the repository and open the solution
 ## .NET Versions
 - .NET: 9.0
 - .NET MAUI: 9.0 (goes hand-in-hand with .NET 9.0 so obvious really!)
-- 
+
 _Note: Although .NET has LTS and STS versions where LTS are even version numbers and STS are odd versions, .NET MAUI is STS regardless._
 - [.NET and .NET Core Support Policy] (https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core)
 - [.NET MAUI Support Policy] (https://dotnet.microsoft.com/en-us/platform/support/policy/maui)
