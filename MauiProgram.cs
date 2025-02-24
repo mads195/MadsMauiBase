@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using MadsMauiBase.Services.Utilities;
+using MadsMauiBase.ViewModels.Examples;
+using MadsMauiBase.Views.Examples;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Hosting;
 
@@ -22,6 +24,8 @@ namespace MadsMauiBase
                 })
                 .RegisterServices()
                 .RegisterViewModels();
+
+            RegisterRoutes();
 
 #if DEBUG
             oBuilderZ.Logging.AddDebug();
@@ -49,7 +53,15 @@ namespace MadsMauiBase
         /// <returns></returns>
         public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder oMauiAppBuilderZ)
         {
+            oMauiAppBuilderZ.Services.AddSingleton<ClipboardView>();
+            oMauiAppBuilderZ.Services.AddSingleton<ClipboardViewModel>();
+
             return oMauiAppBuilderZ;
+        }
+
+        public static void RegisterRoutes()
+        {
+            Routing.RegisterRoute("clipboard", typeof(ClipboardView));
         }
     }
 }

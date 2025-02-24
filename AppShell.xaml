@@ -4,12 +4,98 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MadsMauiBase"
+    xmlns:localTabs="clr-namespace:MadsMauiBase.Views.Examples"
     Shell.FlyoutBehavior="Flyout"
     Title="MadsMauiBase">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!-- Flyout - Header -->
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="LightGrey">
+            <Grid Margin="0,0,0,1" BackgroundColor="{StaticResource Gray100}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image Source="codelocksconnect.png"
+                   HeightRequest="16"
+                   WidthRequest="16"
+                   HorizontalOptions="Start" 
+                   Margin="20,0,0,0"
+                   Grid.Column="0"/>
+                <Label Text="Codelocks Connect" FontSize="14" FontAttributes="Bold" Padding="0,20" BackgroundColor="Transparent" HorizontalOptions="Start" Grid.Column="1"/>
+            </Grid>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- Flyout - Home -->
+    <FlyoutItem FlyoutDisplayOptions="AsSingleItem" FlyoutItemIsVisible="False">
+        <ShellContent
+        Icon="home.png"
+        Title="SignIn"
+        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
+        Route="clipboard"/>
+    </FlyoutItem>
+
+    <!-- Flyout - Main menu items and tabs -->
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" FlyoutItemIsVisible="True">
+
+        <ShellContent
+        Icon="tab_1.png"
+        Title="Tab 1"
+        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
+        Route="clipboard"/>
+
+        <ShellContent
+        Icon="tab_2.png"
+        Title="Tab 2"
+        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
+        Route="clipboard" />
+
+        <ShellContent
+        Icon="tab_3.png"
+        Title="Tab 3"
+        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
+        Route="clipboard"/>
+
+        <ShellContent
+        Icon="tab_4.png"
+        Title="Tab 4"
+        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
+        Route="clipboard"/>
+    </FlyoutItem>
+
+    <!-- Flyout - Additional menu items -->
+    <!--<MenuItem Text="Unclaimed Clients"
+    IconImageSource="web.png"
+    Command="{Binding NavigateCommand}" 
+    CommandParameter="claimclientspage" />-->
+
+    <!-- Flyout - Footer Navigation -->
+    <Shell.FlyoutFooter>
+        <Grid BackgroundColor="{StaticResource Gray200}">
+            <Grid.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="10,10,10,40" />
+                    <On Platform="Android" Value="10,10,10,10" />
+                </OnPlatform>
+            </Grid.Padding>
+            <StackLayout VerticalOptions="End" Spacing="15">
+                <!--
+                <Grid ColumnDefinitions="60, *" VerticalOptions="Center">
+                    <Image Source="legal.png" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="24" WidthRequest="24" Grid.Column="0"/>
+                    <Label Text="Legal" VerticalOptions="Center"  Grid.Column="1" />
+                    <Button 
+                BackgroundColor="Transparent" 
+                Command="{Binding NavigateCommand}" 
+                CommandParameter="legalpage"
+                Grid.ColumnSpan="2" />
+                </Grid>-->
+
+                
+                <Grid ColumnDefinitions="60, *" VerticalOptions="Center" HeightRequest="40" BackgroundColor="{StaticResource Gray100}" />
+            </StackLayout>
+        </Grid>
+    </Shell.FlyoutFooter>
 
 </Shell>

@@ -71,4 +71,8 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Resources\Images\icons\" />
+	</ItemGroup>
+
 </Project>
