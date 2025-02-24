@@ -34,16 +34,16 @@ Model names are PascalCase and are singular, not plural.
 **Variables**
 Variables are syntax set camelCase. A variable always starts with a lowercase character, an occasional two character sub-type and following by subsequent words starting with a capital letter. Finally, an occasional uppercase letter at the end. The first character indicates the type of data that the variable contains. This gives you at at-a-glance view of what the variable is and what it contains. The subsequent words should be consise and meaningful. 
 
-| First Character | Indicates Type of | Notes |
-| ------------- | ------------- |
-| a | Array | |
-| b | Boolean | |
-| c | Char | |
-| i | Integer | |
-| d | Decimal/Double | |
-| o | Object | Followed immediately by `Db` if a database connection. E.g. `oDbClientZ`. Objects are always suffixed by `Z`. |
-| t | Time/Date | |
-| v | String | |
+| First Character | Notes |
+| --- | --- |
+| a | Array |
+| b | Boolean |
+| c | Char |
+| i | Integer |
+| d | Decimal/Double |
+| o | Object - Followed immediately by `Db` if a database connection. E.g. `oDbClientZ`. Objects are always suffixed by `Z`. |
+| t | Time/Date |
+| v | String |
 
 **Why are objects suffixed with Z?**
 Simply to draw attention to it being an object. To be quite honest, I can't remember and am cross with myself for this!
