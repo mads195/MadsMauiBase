@@ -29,40 +29,27 @@
     </Shell.FlyoutHeader>
 
     <!-- Flyout - Home -->
-    <FlyoutItem FlyoutDisplayOptions="AsSingleItem" FlyoutItemIsVisible="False">
-        <ShellContent
-        Icon="home.png"
-        Title="SignIn"
-        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
-        Route="clipboard"/>
+    <FlyoutItem FlyoutDisplayOptions="AsSingleItem" FlyoutItemIsVisible="True" Title="Home" Icon="home.png">
+        <ShellContent ContentTemplate="{DataTemplate localTabs:HomeView}" Route="home"/>
     </FlyoutItem>
 
     <!-- Flyout - Main menu items and tabs -->
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" FlyoutItemIsVisible="True">
+        <Tab Title="Tab 1" Icon="tab_1.png">
+            <ShellContent ContentTemplate="{DataTemplate localTabs:ClipboardView}" Route="clipboard" />
+        </Tab>
 
-        <ShellContent
-        Icon="tab_1.png"
-        Title="Tab 1"
-        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
-        Route="clipboard"/>
+        <Tab Title="Tab 2" Icon="tab_2.png">
+            <ShellContent ContentTemplate="{DataTemplate localTabs:ClipboardView}" Route="clipboard" />
+        </Tab>
 
-        <ShellContent
-        Icon="tab_2.png"
-        Title="Tab 2"
-        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
-        Route="clipboard" />
+        <Tab Title="Tab 3" Icon="tab_3.png">
+            <ShellContent ContentTemplate="{DataTemplate localTabs:ClipboardView}" Route="clipboard"/>
+        </Tab>
 
-        <ShellContent
-        Icon="tab_3.png"
-        Title="Tab 3"
-        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
-        Route="clipboard"/>
-
-        <ShellContent
-        Icon="tab_4.png"
-        Title="Tab 4"
-        ContentTemplate="{DataTemplate localTabs:ClipboardView}"
-        Route="clipboard"/>
+        <Tab Title="Tab 4" Icon="tab_4.png">
+            <ShellContent ContentTemplate="{DataTemplate localTabs:ClipboardView}" Route="clipboard"/>
+        </Tab>
     </FlyoutItem>
 
     <!-- Flyout - Additional menu items -->

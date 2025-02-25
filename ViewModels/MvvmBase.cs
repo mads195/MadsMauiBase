@@ -26,8 +26,11 @@ namespace MadsMauiBase.ViewModels
          */
         public MvvmBase(IClipboardService? clipboardService = null)
         {
-            _clipboardService = clipboardService;
-            ClipboardCommand = new Command<string>(async (text) => await CopyToClipboardAsync(text));
+            if (clipboardService != null)
+            {
+                _clipboardService = clipboardService;
+                ClipboardCommand = new Command<string>(async (text) => await CopyToClipboardAsync(text));
+            }
         }
         /// <summary>
         /// Copy text to the clipboard

@@ -53,8 +53,10 @@ namespace MadsMauiBase
         /// <returns></returns>
         public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder oMauiAppBuilderZ)
         {
-            oMauiAppBuilderZ.Services.AddSingleton<ClipboardView>();
-            oMauiAppBuilderZ.Services.AddSingleton<ClipboardViewModel>();
+            oMauiAppBuilderZ.Services.AddTransient<ClipboardView>();
+            oMauiAppBuilderZ.Services.AddTransient<ClipboardViewModel>();
+            oMauiAppBuilderZ.Services.AddTransient<HomeView>();
+            oMauiAppBuilderZ.Services.AddTransient<HomeViewModel>();
 
             return oMauiAppBuilderZ;
         }
@@ -62,6 +64,7 @@ namespace MadsMauiBase
         public static void RegisterRoutes()
         {
             Routing.RegisterRoute("clipboard", typeof(ClipboardView));
+            Routing.RegisterRoute("home", typeof(HomeView));
         }
     }
 }

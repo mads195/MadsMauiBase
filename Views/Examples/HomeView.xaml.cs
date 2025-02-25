@@ -2,10 +2,10 @@ using MadsMauiBase.ViewModels.Examples;
 
 namespace MadsMauiBase.Views.Examples;
 
-public partial class ClipboardView : ContentPage
+public partial class HomeView : ContentPage
 {
-    public ClipboardView(ClipboardViewModel oVmZ)
-    {
+	public HomeView(HomeViewModel oVmZ)
+	{
         BindingContext = oVmZ;
         InitializeComponent();
 
@@ -13,6 +13,6 @@ public partial class ClipboardView : ContentPage
     }
     private async void Page_Appearing(object? sender, EventArgs e)
     {
-        await ((ClipboardViewModel)BindingContext).Initialize();
+        await ((HomeViewModel)BindingContext).Initialize();
     }
 }
