@@ -13,6 +13,6 @@ public partial class ClipboardView : ContentPage
     }
     private async void Page_Appearing(object? sender, EventArgs e)
     {
-        await ((ClipboardViewModel)BindingContext).Initialize();
+        await ((ClipboardViewModel)BindingContext).Appearing();
     }
 }

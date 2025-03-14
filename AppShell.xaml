@@ -40,7 +40,7 @@
         </Tab>
 
         <Tab Title="Tab 2" Icon="tab_2.png">
-            <ShellContent ContentTemplate="{DataTemplate localTabs:ClipboardView}" Route="clipboard" />
+            <ShellContent ContentTemplate="{DataTemplate localTabs:FormView}" Route="form" />
         </Tab>
 
         <Tab Title="Tab 3" Icon="tab_3.png">

@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui;
+using MadsMauiBase.Controls.StarterKit;
 using MadsMauiBase.Services.Utilities;
 using MadsMauiBase.ViewModels.Examples;
+using MadsMauiBase.ViewModels.StarterKit;
 using MadsMauiBase.Views.Examples;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Hosting;
@@ -42,6 +44,7 @@ namespace MadsMauiBase
         public static MauiAppBuilder RegisterServices(this MauiAppBuilder oMauiAppBuilderZ)
         {
             oMauiAppBuilderZ.Services.AddSingleton<IClipboardService, ClipboardService>();
+            oMauiAppBuilderZ.Services.AddTransientPopup<MadsPopup, MadsPopupViewModel>();
 
             return oMauiAppBuilderZ;
         }
@@ -57,6 +60,8 @@ namespace MadsMauiBase
             oMauiAppBuilderZ.Services.AddTransient<ClipboardViewModel>();
             oMauiAppBuilderZ.Services.AddTransient<HomeView>();
             oMauiAppBuilderZ.Services.AddTransient<HomeViewModel>();
+            oMauiAppBuilderZ.Services.AddTransient<FormView>();
+            oMauiAppBuilderZ.Services.AddTransient<FormViewModel>();
 
             return oMauiAppBuilderZ;
         }
@@ -65,6 +70,7 @@ namespace MadsMauiBase
         {
             Routing.RegisterRoute("clipboard", typeof(ClipboardView));
             Routing.RegisterRoute("home", typeof(HomeView));
+            Routing.RegisterRoute("form", typeof(FormView));
         }
     }
 }

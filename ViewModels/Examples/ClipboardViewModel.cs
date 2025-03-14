@@ -9,11 +9,22 @@ namespace MadsMauiBase.ViewModels.Examples
 {
     public class ClipboardViewModel : MvvmBase
     {
+        /**
+         * Properties
+         */
+
+        /**
+         * Constructor
+         */
         public ClipboardViewModel(IClipboardService clipboardService) : base(clipboardService)
         {
             //
         }
-        public async Task Initialize()
+        /// <summary>
+        /// Run on view appearing
+        /// </summary>
+        /// <returns></returns>
+        public async Task Appearing()
         {
 
         }

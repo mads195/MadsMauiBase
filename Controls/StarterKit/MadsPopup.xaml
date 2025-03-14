@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewModels="clr-namespace:MadsMauiBase.ViewModels.StarterKit"
+             x:Class="MadsMauiBase.Controls.StarterKit.MadsPopup"
+             x:DataType="viewModels:MadsPopupViewModel"
+             Color="Transparent">
+    <Grid Padding="20" x:Name="MadsPopupWindow">
+        <Border Stroke="Black" StrokeThickness="1" BackgroundColor="White" HorizontalOptions="Fill">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="15" />
+            </Border.StrokeShape>
+
+            <Grid Margin="10" HorizontalOptions="Fill">
+                <VerticalStackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Fill">
+                    <!-- Popup Title - this, and the line beneath, are only shown if a title exists. -->
+                    <Label Text="{Binding VTitle}" TextColor="Black" Margin="0" Padding="0" FontAttributes="Bold" IsVisible="{Binding bHasTitle}" />
+                    <Border Stroke="Black" StrokeThickness="1" BackgroundColor="White" HorizontalOptions="Fill" Margin="0,10" IsVisible="{Binding bHasTitle}">
+                    </Border>
+                    <!-- Popup message - only shown if a message exists -->
+                    <Label Text="{Binding VMessage}" IsVisible="{Binding bHasMessage}" />
+
+                    <Entry Text="{Binding Name}" BackgroundColor="AliceBlue" />
+                    
+                    <Grid ColumnSpacing="5" HorizontalOptions="Fill">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button Text="Save" Grid.Column="0" Command="{Binding SaveCommand}" HeightRequest="30" TextColor="White" />
+                        <Button Text="Cancel" Grid.Column="1" Command="{Binding CancelCommand}" TextColor="White" />
+                    </Grid>
+                </VerticalStackLayout>
+
+            </Grid>
+        </Border>
+    </Grid>
+</toolkit:Popup>

@@ -8,11 +8,22 @@ namespace MadsMauiBase.ViewModels.Examples
 {
     public class HomeViewModel : MvvmBase
     {
+        /**
+         * Properties
+         */
+
+        /**
+         * Constructor
+         */
         public HomeViewModel()
         {
             //
         }
-        public async Task Initialize()
+        /// <summary>
+        /// Run on view appearing
+        /// </summary>
+        /// <returns></returns>
+        public async Task Appearing()
         {
 
         }
