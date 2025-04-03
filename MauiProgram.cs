@@ -6,6 +6,7 @@ using MadsMauiBase.ViewModels.StarterKit;
 using MadsMauiBase.Views.Examples;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Hosting;
+using MadsMauiLib;
 
 namespace MadsMauiBase
 {
@@ -18,6 +19,7 @@ namespace MadsMauiBase
                 .UseMauiApp<App>()
                 // Initialize the .NET MAUI Community Toolkit by adding the below line of code
                 .UseMauiCommunityToolkit()
+                .UseMadsMauiLib()
                 // After initializing the .NET MAUI Community Toolkit, optionally add additional fonts
                 .ConfigureFonts(fonts =>
                 {

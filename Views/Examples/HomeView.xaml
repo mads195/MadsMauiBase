@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MadsMauiBase.Views.Examples.HomeView"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:madsmauilib="clr-namespace:MadsMauiLib.Controls;assembly=MadsMauiLib"
+             xmlns:controls="clr-namespace:MadsMauiLib.Controls;assembly=MadsMauiLib"
              Title="Home">
     <VerticalStackLayout>
         <Label 
@@ -11,6 +11,6 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <madsmauilib:SectionTitle SectionTitleBackgroundColor="AliceBlue" />
+        <controls:SectionTitle SectionTitleBackgroundColor="AliceBlue" />
     </VerticalStackLayout>
 </ContentPage>
