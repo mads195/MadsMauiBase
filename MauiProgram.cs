@@ -6,7 +6,7 @@ using MadsMauiBase.ViewModels.StarterKit;
 using MadsMauiBase.Views.Examples;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Hosting;
-using MadsMauiLib;
+using Mads195.MadsMauiLib;
 
 namespace MadsMauiBase
 {
