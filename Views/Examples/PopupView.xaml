@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mmlcontrols="clr-namespace:Mads195.MadsMauiLib.Controls;assembly=MadsMauiLib"
+             xmlns:playground="clr-namespace:MadsMauiBase.Controls.Playground"
+             x:Class="MadsMauiBase.Views.Examples.PopupView"
+             Title="PopupView">
+    <VerticalStackLayout>
+        <mmlcontrols:ScreenTitle Grid.Row="0" Title="Popup View" Byline="A demo of the MadsMauiLib FlexiDialog" />
+        
+        <Label 
+            Text="Welcome to the popup view"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button Text="Open Popup">
+            <Button.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ShowPopupCommand}" />
+            </Button.GestureRecognizers>
+        </Button>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="40" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" BackgroundColor="Transparent">
+                
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <mmlcontrols:IndeterminateProgressBar HeightRequest="50" />
+            </Grid>
+
+            <Grid Grid.Column="2" BackgroundColor="Transparent">
+
+            </Grid>
+        </Grid>
+
+        <mmlcontrols:TransferProgressIndicator Padding="20" />
+
+    </VerticalStackLayout>
+</ContentPage>

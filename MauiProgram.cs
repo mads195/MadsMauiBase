@@ -64,6 +64,8 @@ namespace MadsMauiBase
             oMauiAppBuilderZ.Services.AddTransient<HomeViewModel>();
             oMauiAppBuilderZ.Services.AddTransient<FormView>();
             oMauiAppBuilderZ.Services.AddTransient<FormViewModel>();
+            oMauiAppBuilderZ.Services.AddTransient<PopupView>();
+            oMauiAppBuilderZ.Services.AddTransient<PopupViewModel>();
 
             return oMauiAppBuilderZ;
         }
@@ -73,6 +75,7 @@ namespace MadsMauiBase
             Routing.RegisterRoute("clipboard", typeof(ClipboardView));
             Routing.RegisterRoute("home", typeof(HomeView));
             Routing.RegisterRoute("form", typeof(FormView));
+            Routing.RegisterRoute("popupviewmodel", typeof(PopupView));
         }
     }
 }

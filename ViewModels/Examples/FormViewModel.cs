@@ -22,9 +22,8 @@ namespace MadsMauiBase.ViewModels.Examples
         public FormViewModel(IPopupService oPopupServiceZ)
         {
             this.oPopupServiceZ = oPopupServiceZ;
-            /**
-             * Actions
-             */
+
+            // Actions
             ShowPopupCommand = new Command(async x => await ShowPopup(x));
         }
         /// <summary>
