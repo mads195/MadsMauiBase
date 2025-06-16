@@ -6,12 +6,14 @@
              x:Class="MadsMauiBase.Views.Examples.PopupView"
              Title="PopupView">
     <VerticalStackLayout>
-        <mmlcontrols:ScreenTitle Grid.Row="0" Title="Popup View" Byline="A demo of the MadsMauiLib FlexiDialog" />
+        <mmlcontrols:ScreenTitle Grid.Row="0" Title="Popup View" Byline="A demo of the MadsMauiLib FlexiDialog" EndImageCommand="{Binding ClickEndImageCommand}" />
         
         <Label 
             Text="Welcome to the popup view"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Label Text="{Binding ClickOnScreenTitleResult}" />
 
         <Button Text="Open Popup">
             <Button.GestureRecognizers>

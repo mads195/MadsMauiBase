@@ -1,12 +1,18 @@
 ﻿using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Mads195.MadsMauiLib.ViewModels.Controls;
 
 namespace MadsMauiBase.ViewModels.Examples
 {
-    public partial class PopupViewModel
+    public partial class PopupViewModel : ObservableObject
     {
         private readonly IPopupService oGenericPopupServiceZ;
+        [ObservableProperty]
+        string clickOnScreenTitleResult = "";
+        [ObservableProperty]
+        int clickOnScreenTitleCount = 0;
+
         public PopupViewModel(IPopupService oGenericPopupServiceZ)
         {
             this.oGenericPopupServiceZ = oGenericPopupServiceZ;
@@ -55,6 +61,13 @@ namespace MadsMauiBase.ViewModels.Examples
         {
             viewModel.UpdateMessage(2000, "This is my updated message");
             // Do something here
+        }
+
+        [RelayCommand]
+        internal async Task OnClickEndImage()
+        {
+            clickOnScreenTitleCount++;
+            ClickOnScreenTitleResult = $"Clicked the image {ClickOnScreenTitleCount} times.";
         }
     }
 }
